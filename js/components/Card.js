@@ -8,6 +8,7 @@ import {
 	StyleSheet,
 	TouchableHighlight,
 	Dimensions,
+	Image,
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
@@ -25,8 +26,11 @@ class Card extends Component
 				onPress={this.props.onPress.bind(this)}
 				underlayColor='#ccc'
 			>
-				<View>
-					<Text>{ data.name }</Text>
+				<View style={styles.flex}>
+					<Image source={require('../../images/main-course.jpeg')} resizeMode={'cover'} style={styles.card__image} />
+					<View style={styles.card__content}>
+						<Text style={styles.card__title} numberOfLines={1}>{ data.name }</Text>
+					</View>
 				</View>
 			</TouchableHighlight>
 		)
@@ -34,17 +38,33 @@ class Card extends Component
 }
 
 const styles = StyleSheet.create({
+	flex: {
+		flex: 1,
+		flexDirection: 'column'
+	},
+
 	card: {
 		width: (width / 3) - 30,
-		height: 100,
+		height: 130,
 		margin: 5,
-		padding: 10,
-		borderRadius: 5,
 		opacity: 0.9,
 		backgroundColor: '#ddd',
-		alignItems: 'center',
-		justifyContent: 'center'
 	},
+
+	card__image: {
+		width: (width / 3) - 30,
+		height: 100,
+	},
+
+	card__content: {
+		padding: 10,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+
+	card__title: {
+		color: '#333',
+	}
 })
 
 export default Card;
