@@ -28,7 +28,7 @@ class Category extends Component
 				<Card 
 					key={menu.id} 
 					data={menu} 
-					onPress={() => Actions.menu({ menu })} />
+					onPress={() => Actions.menu({ menu, category })} />
 			)
 		});
 
@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
 	},
 
 	bg: {
-		flex: 1,
 		width: width,
 		height: height,
 		position: 'absolute',
