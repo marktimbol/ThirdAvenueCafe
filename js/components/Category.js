@@ -36,7 +36,9 @@ class Category extends Component
 			<View style={styles.flex}>
 				<Image resizeMode={'cover'} source={ require('../../images/bg.jpg') } style={styles.bg} />
 				<ScrollView>
-					<Text style={styles.categoryTitle}>Category: { category.name }</Text>
+					<View>
+						<Text style={styles.categoryTitle}>Category: { category.name }</Text>
+					</View>
 					<View style={styles.menus}>
 						{ menus }
 					</View>
@@ -58,10 +60,11 @@ const styles = StyleSheet.create({
 	},
 
 	categoryTitle: {
-		padding: 5,
 		color: 'white',
 		fontSize: 10,
-		backgroundColor: '#4A2C68'
+		padding: 5,
+		textAlign: 'center',
+		backgroundColor: '#6B447B',
 	},
 
 	menus: {

@@ -30,9 +30,9 @@ class Menu extends Component
 
 		const categoryMenus = category.menus.map((categoryMenu) => {
 			return (
-				<View style={styles.flex} key={categoryMenu.id}>
+				<View style={styles.menu} key={categoryMenu.id}>
 					<Image 
-						style={styles.image}
+						style={styles.featuredImage}
 						resizeMode={'cover'}
 						source={ require('../../images/main-course.jpeg') } />
 					<View style={styles.descriptionContainer}>
@@ -48,7 +48,7 @@ class Menu extends Component
 			);
 		})
 		return (
-			<Swiper showButtons={true} loop={false}>
+			<Swiper showButtons={true} loop={true}>
 				{ categoryMenus }
 			</Swiper>
 		)
@@ -57,7 +57,7 @@ class Menu extends Component
 
 const styles = StyleSheet.create({
 
-	flex: {
+	menu: {
 		flex: 1,
 		alignItems: 'flex-end',
 		justifyContent: 'flex-end',
@@ -83,11 +83,7 @@ const styles = StyleSheet.create({
 		textAlign: 'right',
 	},
 
-	imageContainer: {
-		flex: 1,
-	},
-
-	image: {
+	featuredImage: {
 		width: width,
 		height: height,
 		marginTop: -10,
@@ -100,8 +96,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 
 		width: width / 3,
-		opacity: 0.8,
 		padding: 10,
+		opacity: 0.8,
 		backgroundColor: 'white',
 	},
 
@@ -120,6 +116,11 @@ const styles = StyleSheet.create({
 	description: {
 		fontSize: 14,
 		color: '#333',
+	},
+
+	ribbon: {
+		height: 30,
+		marginTop: 20,
 	}
 })
 
